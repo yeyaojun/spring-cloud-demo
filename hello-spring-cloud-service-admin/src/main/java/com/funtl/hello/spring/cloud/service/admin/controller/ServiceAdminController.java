@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServiceAdminController {
     @RequestMapping(value = "hi", method = RequestMethod.GET)
     public String sayHi(@RequestParam String message) {
-        return "Hi，your message is :"+message+" i am from port：8763";
+        return "Hi，your message is :"+message+" i am from port：8762";
     }
 }
