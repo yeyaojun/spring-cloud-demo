@@ -11,7 +11,12 @@ public class AdminService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "hiError")
     public String sayHi(String message) {
         return restTemplate.getForObject("http://HELLO-SPRING-CLOUD-SERVICE-ADMIN/hi?message=" + message, String.class);
+    }
+
+    public String hiError(String message) {
+        return "Hi，your message is :\"" + message + "\" but request error.";
     }
 }
